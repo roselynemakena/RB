@@ -48,6 +48,37 @@ puts "---------WORD DATE---------------"
 #iterating over dates
 # (Date.new(2017,1,1)..Date.new(2017,5,5)).each{|x| puts x}
 
+#Adding a pause in code
+
+(1..2).each{|x| puts x; sleep(2)}; puts "Done!"
+
+#Adding timeouts between code
+
+require 'timeout'
+
+before = Time.now
+
+begin
+status = Timeout.timeout(3) {sleep}
+
+	rescue Timeout::Error
+		puts "I have only slept for:: #{Time.now - before}"
+
+end
+
+#count continuously until 5 seconds are over
+
+begin
+	i=0
+
+	Timeout.timeout(5){loop{i+=1}}
+
+	
+rescue Timeout::Error
+	puts "I can count to #{i} in 5 seconds"
+	
+end
+
 
 
 
