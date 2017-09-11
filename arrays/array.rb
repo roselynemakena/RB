@@ -60,6 +60,17 @@ alpha = ((letter.to_s)..'z').step(13){|x| puts x}
 end
 
 get_13th("v")
+puts "-----------------------------------------"
+
 	
+
+# Getting unique values in array
+v = ["a","a","b","c", "c"]
+
+puts v.uniq
+puts "-----------------------------------------"
+
+#reverse an array
+puts v.uniq.reverse
 
 
