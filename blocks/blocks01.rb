@@ -22,3 +22,90 @@ end
 block_a = lambda{|x| puts x*x}
 
 block_a.call(10)
+
+#Passing blocks into methods - using &
+def here_is_a_block(&supr)
+
+supr	
+end
+
+here_is_a_block{puts "I'm a super block"}
+
+#Using block given
+
+def call_block(n)
+
+	if block_given?
+		n.times{yield}
+	else
+		puts "There is no block! you have provided!"
+	end
+	
+end
+
+call_block(3) {puts "Im a block"}
+
+#passing arguments into code blocks
+
+def a_great_method
+
+	puts "Welcome to my method"
+	value = yield("first time")
+
+	puts "This is the :: #{value}"
+
+	value = yield("second time")
+	puts "Iteration number :: #{value}"
+
+	value = yield("last time")
+	puts "And finally :: #{value}"
+
+end
+
+
+a_great_method do |values|
+	if values == "first time"
+		value = 1
+
+	elsif values == "second time"
+		value = 2
+
+	else
+
+		value = 3
+	end
+
+end
+
+
+#How Hash#find gets values using blocks
+
+h = { 1 => "one", 2=>"two", 3=>"three",4=>"four",5=>"five"}
+
+res = h.find{|k,v| k >2 }
+puts res 
+
+res2 = h.find_all
+puts res2.each{|x| puts x}
+
+class Hash
+	def find_all
+		new_hash = Hash.new
+
+		each {|k,v| new_hash[k]< v if yield(k,v)}
+		new_hash
+
+		
+	end
+end
+
+#Passing a blockas anargument to a method - using &
+
+def pick_winners(min, max, limit)
+
+	limit.times {yield min+rand(max+1) }
+
+end
+
+
+pick_winners(1,10,3) {|x| puts "The winners are #{x}"}
