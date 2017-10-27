@@ -137,7 +137,7 @@ array = %w{"Once a there an man in forest. the living old was time upon"}
 array.iterate_both_sides { |x| puts x}
 
 
-b = array.collect {|x| puts x.capitalize}
+b = array.collect {|x| x.capitalize}
 
 puts b
 
