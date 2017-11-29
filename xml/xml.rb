@@ -33,10 +33,17 @@ def self.valid_xml?(xml)
 	rescue REXML::ParseException
 		false
 
-	end
-		
+	end		
 end
+
 hi
 check_xml(xml_sample)
+
+# Extracting data from a document tree using each_element
+xml_ = REXML::Document.new(xml_sample)
+xml_.root.each_element do |element|
+		puts element
+	end
+
 end
 
