@@ -109,3 +109,38 @@ end
 
 
 pick_winners(1,10,3) {|x| puts "The winners are #{x}"}
+<<<<<<< HEAD
+=======
+
+#Complex data structures with blocks and closures
+
+class Array 
+	def iterate_both_sides
+		findex = 0
+		bindex = self.length-1
+		puts bindex
+
+		while findex <=bindex
+			yield self[findex]
+			findex +=1
+			if findex <=bindex
+				yield self[bindex]
+				bindex -=1
+
+			end
+
+		end
+		
+	end
+end
+
+array = %w{"Once a there an man in forest. the living old was time upon"}
+
+array.iterate_both_sides { |x| puts x}
+
+
+b = array.collect {|x| x.capitalize}
+
+puts b
+
+>>>>>>> c7f6e13e01b28e6a4216a95f86cb5282fd9718b1
