@@ -32,3 +32,6 @@ end
 
 image02.write('pics/earthcopy.jpeg')
 
+# Converting one image type to another
+
+
