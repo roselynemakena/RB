@@ -11,3 +11,8 @@ Zlib::GzipWriter.open(file) do |gzip|
 end
 
 puts open(file, 'rb') {|f| f.read(10)}
+
+#writing and reading tarballs
+
+
+#Writing and reading zips
