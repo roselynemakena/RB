@@ -24,11 +24,16 @@ class Book
 			"Book: #{@pages}, #{@cat}"
 			
 		end
+
+		def method_missing(meth, *args)
+			"What is #{meth}"
+			
+		end
 end
 
 book = Book.new(200, "fiction")
 
-puts book
+puts book.to_s
 
 book02 = Book.new(1,"other")
 book02.setPages(30)
@@ -38,6 +43,6 @@ book03 = Book.allocate
 book03.setPages(340)
 
 
-puts book03
+puts book03.to_s
 
-puts book02
+puts book02.seta
