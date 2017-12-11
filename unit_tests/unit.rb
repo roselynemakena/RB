@@ -17,6 +17,6 @@ class Student
 
 end
 
-makena  = Student.new("Rose", "Makena", 342)
+makena  = Student.new("Rose", "Makena", 5342)
 
 puts makena.first_name
