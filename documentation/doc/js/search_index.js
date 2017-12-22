@@ -1,0 +1,1 @@
+var search_data = {"index":{"searchIndex":["rdoc"],"longSearchIndex":["rdoc"],"info":[["RDoc","","RDoc.html","",""]]}}
